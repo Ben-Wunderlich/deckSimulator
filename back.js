@@ -37,8 +37,19 @@ function DrawCard(deck){
     return pickedCard;
 }
 
-function Loading(el){
-    //maybe dont do this
+function Loading(el, deck){
+    i=0
+    temp = setInterval(flicker, 10);
+    function flicker() {
+        if (i> 40) {
+            clearInterval(temp);
+            $(el).html("");
+        } else {
+            rand = Math.floor(Math.random() * deck.length)
+            $(el).html(deck[rand]);
+            i+=1;
+        }
+    }
 }
 
 
@@ -89,5 +100,17 @@ $(".reset_deck").on("click", function(){
     $(seasonParent).children().filter(".cards_left").children().last().empty();
     $(seasonParent).css("background-color", "#1E96FA");
 });
+
+$(".shuffle_deck").on("click", function(){
+    seasonParent=$(this).parent().parent();
+    season = parseInt($(seasonParent).attr("id").slice(-1));
+    if(seasonDecks[season].length==0){
+        return;
+    }
+
+    Loading($(seasonParent).children().filter(".shuffle").children().last()[0], 
+    seasonDecks[season]);
+});
+
 
 });
