@@ -1,0 +1,45 @@
+html{
+    background-color: #0F4A7A;
+}
+
+.season{
+    top: 30px;
+    position: absolute;
+    width: 300px;
+    background-color: #1E96FA;
+}
+
+.season *{
+    position: relative;
+}
+
+#spring0{
+    left: 20px;
+}
+#summer1{
+    left: 330px;
+}
+
+#fall2{
+    left: 640px;
+}
+#winter3{
+    left: 950px;
+}
+
+h3{
+    width: 100%;
+    text-align: center;
+}
+
+button{
+    margin: 6px;
+    margin-top: 0px;
+    background-color: #7cc0cf;
+}
+
+.draw_result{
+    background-color: #FAA41E;
+    padding: 3px;
+    font-size: x-large;
+}
