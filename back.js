@@ -37,13 +37,21 @@ function DrawCard(deck){
     return pickedCard;
 }
 
+alreadyLoading=false;
+
 function Loading(el, deck){
+    if(alreadyLoading){
+        return
+    }
+    alreadyLoading=true;
+
     i=0
     temp = setInterval(flicker, 10);
     function flicker() {
         if (i> 40) {
             clearInterval(temp);
             $(el).html("");
+            alreadyLoading=false;
         } else {
             rand = Math.floor(Math.random() * deck.length)
             $(el).html(deck[rand]);
@@ -51,8 +59,6 @@ function Loading(el, deck){
         }
     }
 }
-
-
 
 
 $(document).ready(function(){

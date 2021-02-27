@@ -1,5 +1,6 @@
-html{
-    background-color: #0F4A7A;
+html, button{
+    background-color: #0c406b;
+    color: rgb(255, 250, 240);
 }
 
 .season{
@@ -27,19 +28,39 @@ html{
     left: 950px;
 }
 
-h3{
+h2{
     width: 100%;
     text-align: center;
+    font-family: serif;
 }
 
 button{
     margin: 6px;
     margin-top: 0px;
-    background-color: #7cc0cf;
+    padding: 5px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #072a15;
+    background-color: #6489c5;    
+}
+  
+button:hover {
+    background-color: #4caf72; /* Green */
+    transition-duration: 0.3s;
+}
+
+button:active{
+    background-color: #240820;
+    transform: translateY(3px);
+    transition-duration: .1s;
 }
 
 .draw_result{
-    background-color: #FAA41E;
+    border-style: double;
     padding: 3px;
     font-size: x-large;
+}
+
+.season_el{
+    margin: 6px;
 }
